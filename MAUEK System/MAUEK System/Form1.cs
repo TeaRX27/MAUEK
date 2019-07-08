@@ -17,16 +17,17 @@ namespace MAUEK_System
             InitializeComponent();
             Marker.Height = HomeButton.Height;
             Marker.Top = HomeButton.Top;
-           
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Marker.Height = HomeButton.Height;
-            Marker.Top = HomeButton.Top;
-            checksize();       
+            
+            distance = Marker.Top - HomeButton.Top;
+            checksize();
+            timer1.Start(); 
             if (hcollapsed)
             {
+                
                 HomeButton.Enabled = false;
                 EventListButton.Enabled = false;
                 EventRegButton.Enabled = false;
@@ -50,9 +51,11 @@ namespace MAUEK_System
 
         private void EventRegButton_Click(object sender, EventArgs e)
         {
-            Marker.Height = EventRegButton.Height;
-            Marker.Top = EventRegButton.Top;
+
+            distance = Marker.Top - EventRegButton.Top;
             checksize();
+            timer1.Start();
+
             if (ercollapsed)
             {
                 HomeButton.Enabled = false;
@@ -78,9 +81,10 @@ namespace MAUEK_System
 
         private void EventListButton_Click(object sender, EventArgs e)
         {
-            Marker.Height = EventListButton.Height;
-            Marker.Top = EventListButton.Top;
+
+            distance = Marker.Top - EventListButton.Top;
             checksize();
+            timer1.Start();
             if (elcollapsed)
             {
                 HomeButton.Enabled = false;
@@ -105,9 +109,9 @@ namespace MAUEK_System
 
         private void PrintButton_Click(object sender, EventArgs e)
         {
-            Marker.Height = PrintButton.Height;
-            Marker.Top = PrintButton.Top;
+            distance = Marker.Top - PrintButton.Top;
             checksize();
+            timer1.Start();
             if (pcollapsed)
             {
                 HomeButton.Enabled = false;
@@ -145,7 +149,7 @@ namespace MAUEK_System
             if (hcollapsed)
             {
                 HomeScreen.BringToFront();
-                HomeScreen.Width += 80;
+                HomeScreen.Width += 100;
                 if(HomeScreen.Size==HomeScreen.MaximumSize)
                 {
                     HomeTimer.Stop();
@@ -159,7 +163,7 @@ namespace MAUEK_System
             else
             {
                 HomeScreen.SendToBack();
-                HomeScreen.Width -= 80;
+                HomeScreen.Width -= 100;
                 if (HomeScreen.Size == HomeScreen.MinimumSize)
                 {
                     HomeTimer.Stop();
@@ -169,6 +173,7 @@ namespace MAUEK_System
                     EventRegButton.Enabled = true;
                     PrintButton.Enabled = true;
                 }
+                
             }
 
         }
@@ -177,7 +182,7 @@ namespace MAUEK_System
             if (ercollapsed)
             {
                 EventReg.BringToFront();
-                EventReg.Width += 80;
+                EventReg.Width += 100;
                 if (EventReg.Size == EventReg.MaximumSize)
                 {
                     EventRegTimer.Stop();
@@ -191,7 +196,7 @@ namespace MAUEK_System
             else
             {
                 EventReg.SendToBack();
-                EventReg.Width -= 80;
+                EventReg.Width -= 100;
                 if (EventReg.Size == EventReg.MinimumSize)
                 {
                     EventRegTimer.Stop();
@@ -210,7 +215,7 @@ namespace MAUEK_System
             if (elcollapsed)
             {
                 EventList.BringToFront();
-                EventList.Width += 80;
+                EventList.Width += 100;
                 if (EventList.Size == EventList.MaximumSize)
                 {
                     EventListTimer.Stop();
@@ -224,7 +229,7 @@ namespace MAUEK_System
             else
             {
                 EventList.SendToBack();
-                EventList.Width -= 80;
+                EventList.Width -= 100;
                 if (EventList.Size == EventList.MinimumSize)
                 {
                     EventListTimer.Stop();
@@ -238,12 +243,36 @@ namespace MAUEK_System
 
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (distance < 0)
+            {
+                Marker.Top += 55;
+                distance += 55;
+            }
+            if(distance > 0)
+            {
+                Marker.Top -= 55;
+                distance -= 55;
+            }
+             if(distance == 0)
+            {
+                timer1.Stop();
+            }
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void PrintTimer_Tick(object sender, EventArgs e)
         {
             if (pcollapsed)
             {
                 Print.BringToFront();
-                Print.Width += 80;
+                Print.Width += 100;
                 if (Print.Size == Print.MaximumSize)
                 {
                     PrintTimer.Stop();
@@ -257,7 +286,7 @@ namespace MAUEK_System
             else
             {
                 Print.SendToBack();
-                Print.Width -= 80;
+                Print.Width -= 100;
                 if (Print.Size == Print.MinimumSize)
                 {
                     PrintTimer.Stop();
@@ -271,6 +300,7 @@ namespace MAUEK_System
 
         }
         #endregion
+        int distance;
         private void checksize()
         {
             if (HomeScreen.Size == HomeScreen.MaximumSize)
@@ -306,7 +336,6 @@ namespace MAUEK_System
                 pcollapsed = true;
             }
         }
-
     }
 }
     
