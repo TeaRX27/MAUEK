@@ -129,6 +129,7 @@ namespace MAUEK_System
                 }
             }
         }
+
         private void MainMenu_Load(object sender, EventArgs e)
         {
             HomeScreen.Size = HomeScreen.MaximumSize;
@@ -137,6 +138,7 @@ namespace MAUEK_System
             Print.Size = Print.MinimumSize;
             checksize();
         }
+
         #region Transition
         private bool hcollapsed,ercollapsed,elcollapsed,pcollapsed;
         private void HomeTimer_Tick(object sender, EventArgs e)
@@ -145,7 +147,7 @@ namespace MAUEK_System
             if (hcollapsed)
             {
                 HomeScreen.BringToFront();
-                HomeScreen.Width += 80;
+                HomeScreen.Width += 100;
                 if(HomeScreen.Size==HomeScreen.MaximumSize)
                 {
                     HomeTimer.Stop();
@@ -159,7 +161,7 @@ namespace MAUEK_System
             else
             {
                 HomeScreen.SendToBack();
-                HomeScreen.Width -= 80;
+                HomeScreen.Width -= 100;
                 if (HomeScreen.Size == HomeScreen.MinimumSize)
                 {
                     HomeTimer.Stop();
@@ -177,7 +179,7 @@ namespace MAUEK_System
             if (ercollapsed)
             {
                 EventReg.BringToFront();
-                EventReg.Width += 80;
+                EventReg.Width += 100;
                 if (EventReg.Size == EventReg.MaximumSize)
                 {
                     EventRegTimer.Stop();
@@ -191,7 +193,7 @@ namespace MAUEK_System
             else
             {
                 EventReg.SendToBack();
-                EventReg.Width -= 80;
+                EventReg.Width -= 100;
                 if (EventReg.Size == EventReg.MinimumSize)
                 {
                     EventRegTimer.Stop();
@@ -205,12 +207,17 @@ namespace MAUEK_System
 
         }
 
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Application.ExitThread();
+        }
+
         private void EventListTimer_Tick(object sender, EventArgs e)
         {
             if (elcollapsed)
             {
                 EventList.BringToFront();
-                EventList.Width += 80;
+                EventList.Width += 100;
                 if (EventList.Size == EventList.MaximumSize)
                 {
                     EventListTimer.Stop();
@@ -224,7 +231,7 @@ namespace MAUEK_System
             else
             {
                 EventList.SendToBack();
-                EventList.Width -= 80;
+                EventList.Width -= 100;
                 if (EventList.Size == EventList.MinimumSize)
                 {
                     EventListTimer.Stop();
@@ -243,7 +250,7 @@ namespace MAUEK_System
             if (pcollapsed)
             {
                 Print.BringToFront();
-                Print.Width += 80;
+                Print.Width += 100;
                 if (Print.Size == Print.MaximumSize)
                 {
                     PrintTimer.Stop();
@@ -257,7 +264,7 @@ namespace MAUEK_System
             else
             {
                 Print.SendToBack();
-                Print.Width -= 80;
+                Print.Width -= 100;
                 if (Print.Size == Print.MinimumSize)
                 {
                     PrintTimer.Stop();
@@ -271,6 +278,7 @@ namespace MAUEK_System
 
         }
         #endregion
+
         private void checksize()
         {
             if (HomeScreen.Size == HomeScreen.MaximumSize)
