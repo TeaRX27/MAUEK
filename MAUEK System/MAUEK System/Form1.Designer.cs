@@ -36,6 +36,7 @@
             this.EventRegButton = new System.Windows.Forms.Button();
             this.Marker = new System.Windows.Forms.Panel();
             this.HomeButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.HomeScreen = new System.Windows.Forms.Panel();
             this.EventList = new System.Windows.Forms.Panel();
             this.EventReg = new System.Windows.Forms.Panel();
@@ -44,10 +45,8 @@
             this.EventRegTimer = new System.Windows.Forms.Timer(this.components);
             this.EventListTimer = new System.Windows.Forms.Timer(this.components);
             this.PrintTimer = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.userControl11 = new MAUEK_System.UserControl1();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.NavBar.SuspendLayout();
-            this.HomeScreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,9 +70,9 @@
             // 
             this.ExitButton.FlatAppearance.BorderSize = 0;
             this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExitButton.Location = new System.Drawing.Point(0, 574);
+            this.ExitButton.Location = new System.Drawing.Point(0, 584);
             this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(150, 74);
+            this.ExitButton.Size = new System.Drawing.Size(150, 64);
             this.ExitButton.TabIndex = 6;
             this.ExitButton.Text = "EXIT";
             this.ExitButton.UseVisualStyleBackColor = true;
@@ -82,9 +81,9 @@
             // 
             this.PrintButton.FlatAppearance.BorderSize = 0;
             this.PrintButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PrintButton.Location = new System.Drawing.Point(12, 470);
+            this.PrintButton.Location = new System.Drawing.Point(12, 476);
             this.PrintButton.Name = "PrintButton";
-            this.PrintButton.Size = new System.Drawing.Size(138, 104);
+            this.PrintButton.Size = new System.Drawing.Size(138, 112);
             this.PrintButton.TabIndex = 5;
             this.PrintButton.Text = "PRINT";
             this.PrintButton.UseVisualStyleBackColor = true;
@@ -96,7 +95,7 @@
             this.EventListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EventListButton.Location = new System.Drawing.Point(12, 366);
             this.EventListButton.Name = "EventListButton";
-            this.EventListButton.Size = new System.Drawing.Size(138, 104);
+            this.EventListButton.Size = new System.Drawing.Size(138, 112);
             this.EventListButton.TabIndex = 4;
             this.EventListButton.Text = "Event List";
             this.EventListButton.UseVisualStyleBackColor = true;
@@ -106,9 +105,9 @@
             // 
             this.EventRegButton.FlatAppearance.BorderSize = 0;
             this.EventRegButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EventRegButton.Location = new System.Drawing.Point(12, 262);
+            this.EventRegButton.Location = new System.Drawing.Point(12, 256);
             this.EventRegButton.Name = "EventRegButton";
-            this.EventRegButton.Size = new System.Drawing.Size(138, 104);
+            this.EventRegButton.Size = new System.Drawing.Size(138, 112);
             this.EventRegButton.TabIndex = 3;
             this.EventRegButton.Text = "EVENT REGISTRATION";
             this.EventRegButton.UseVisualStyleBackColor = true;
@@ -117,28 +116,35 @@
             // Marker
             // 
             this.Marker.BackColor = System.Drawing.Color.DarkRed;
-            this.Marker.Location = new System.Drawing.Point(0, 150);
+            this.Marker.Location = new System.Drawing.Point(0, 146);
             this.Marker.Name = "Marker";
-            this.Marker.Size = new System.Drawing.Size(10, 116);
+            this.Marker.Size = new System.Drawing.Size(10, 112);
             this.Marker.TabIndex = 2;
             // 
             // HomeButton
             // 
-            this.HomeButton.BackColor = System.Drawing.SystemColors.ControlDark;
             this.HomeButton.FlatAppearance.BorderSize = 0;
             this.HomeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HomeButton.Location = new System.Drawing.Point(12, 150);
+            this.HomeButton.Location = new System.Drawing.Point(12, 146);
             this.HomeButton.Name = "HomeButton";
             this.HomeButton.Size = new System.Drawing.Size(138, 112);
             this.HomeButton.TabIndex = 1;
             this.HomeButton.Text = "HOME";
-            this.HomeButton.UseVisualStyleBackColor = false;
+            this.HomeButton.UseVisualStyleBackColor = true;
             this.HomeButton.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::MAUEK_System.Properties.Resources.LogoPlaceHOlder;
+            this.pictureBox1.Location = new System.Drawing.Point(0, -6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // HomeScreen
             // 
             this.HomeScreen.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.HomeScreen.Controls.Add(this.userControl11);
             this.HomeScreen.Location = new System.Drawing.Point(150, 0);
             this.HomeScreen.MaximumSize = new System.Drawing.Size(1002, 648);
             this.HomeScreen.MinimumSize = new System.Drawing.Size(0, 648);
@@ -197,21 +203,10 @@
             this.PrintTimer.Interval = 1;
             this.PrintTimer.Tick += new System.EventHandler(this.PrintTimer_Tick);
             // 
-            // pictureBox1
+            // timer1
             // 
-            this.pictureBox1.Image = global::MAUEK_System.Properties.Resources.LogoPlaceHOlder;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 150);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // userControl11
-            // 
-            this.userControl11.Location = new System.Drawing.Point(104, 84);
-            this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(539, 490);
-            this.userControl11.TabIndex = 0;
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // MainMenu
             // 
@@ -226,11 +221,9 @@
             this.Controls.Add(this.Print);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainMenu";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainMenu_Load);
             this.NavBar.ResumeLayout(false);
-            this.HomeScreen.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -254,7 +247,7 @@
         private System.Windows.Forms.Timer EventRegTimer;
         private System.Windows.Forms.Timer EventListTimer;
         private System.Windows.Forms.Timer PrintTimer;
-        private UserControl1 userControl11;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
