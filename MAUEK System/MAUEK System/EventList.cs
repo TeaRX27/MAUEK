@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MAUEK_System
 {
-    public partial class UserControl1 : UserControl
+    public partial class EventList : UserControl
     {
-        public UserControl1()
+        public EventList()
         {
             InitializeComponent();
         }

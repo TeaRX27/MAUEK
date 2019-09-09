@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.NavBar = new System.Windows.Forms.Panel();
+            this.EventList = new System.Windows.Forms.Panel();
             this.ExitButton = new System.Windows.Forms.Button();
             this.PrintButton = new System.Windows.Forms.Button();
             this.EventListButton = new System.Windows.Forms.Button();
@@ -38,7 +39,6 @@
             this.HomeButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.HomeScreen = new System.Windows.Forms.Panel();
-            this.EventList = new System.Windows.Forms.Panel();
             this.EventReg = new System.Windows.Forms.Panel();
             this.Print = new System.Windows.Forms.Panel();
             this.HomeTimer = new System.Windows.Forms.Timer(this.components);
@@ -46,7 +46,9 @@
             this.EventListTimer = new System.Windows.Forms.Timer(this.components);
             this.PrintTimer = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.eventList1 = new MAUEK_System.EventList();
             this.NavBar.SuspendLayout();
+            this.EventList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,6 +67,17 @@
             this.NavBar.Name = "NavBar";
             this.NavBar.Size = new System.Drawing.Size(150, 648);
             this.NavBar.TabIndex = 0;
+            // 
+            // EventList
+            // 
+            this.EventList.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.EventList.Controls.Add(this.eventList1);
+            this.EventList.Location = new System.Drawing.Point(150, 0);
+            this.EventList.MaximumSize = new System.Drawing.Size(1002, 648);
+            this.EventList.MinimumSize = new System.Drawing.Size(0, 648);
+            this.EventList.Name = "EventList";
+            this.EventList.Size = new System.Drawing.Size(1002, 648);
+            this.EventList.TabIndex = 2;
             // 
             // ExitButton
             // 
@@ -152,20 +165,10 @@
             this.HomeScreen.Size = new System.Drawing.Size(1002, 648);
             this.HomeScreen.TabIndex = 1;
             // 
-            // EventList
-            // 
-            this.EventList.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.EventList.Location = new System.Drawing.Point(150, 0);
-            this.EventList.MaximumSize = new System.Drawing.Size(1002, 648);
-            this.EventList.MinimumSize = new System.Drawing.Size(0, 648);
-            this.EventList.Name = "EventList";
-            this.EventList.Size = new System.Drawing.Size(1002, 648);
-            this.EventList.TabIndex = 2;
-            // 
             // EventReg
             // 
             this.EventReg.BackColor = System.Drawing.Color.Brown;
-            this.EventReg.Location = new System.Drawing.Point(150, 0);
+            this.EventReg.Location = new System.Drawing.Point(150, 2);
             this.EventReg.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.EventReg.MaximumSize = new System.Drawing.Size(1002, 648);
             this.EventReg.MinimumSize = new System.Drawing.Size(0, 648);
@@ -176,7 +179,7 @@
             // Print
             // 
             this.Print.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Print.Location = new System.Drawing.Point(150, 0);
+            this.Print.Location = new System.Drawing.Point(150, 1);
             this.Print.MaximumSize = new System.Drawing.Size(1002, 648);
             this.Print.MinimumSize = new System.Drawing.Size(0, 648);
             this.Print.Name = "Print";
@@ -208,22 +211,30 @@
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // eventList1
+            // 
+            this.eventList1.Location = new System.Drawing.Point(0, 0);
+            this.eventList1.Name = "eventList1";
+            this.eventList1.Size = new System.Drawing.Size(1002, 648);
+            this.eventList1.TabIndex = 0;
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1152, 648);
-            this.Controls.Add(this.HomeScreen);
-            this.Controls.Add(this.EventList);
-            this.Controls.Add(this.EventReg);
             this.Controls.Add(this.NavBar);
+            this.Controls.Add(this.HomeScreen);
+            this.Controls.Add(this.EventReg);
             this.Controls.Add(this.Print);
+            this.Controls.Add(this.EventList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainMenu";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainMenu_Load);
             this.NavBar.ResumeLayout(false);
+            this.EventList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -248,6 +259,7 @@
         private System.Windows.Forms.Timer EventListTimer;
         private System.Windows.Forms.Timer PrintTimer;
         private System.Windows.Forms.Timer timer1;
+        private EventList eventList1;
     }
 }
 

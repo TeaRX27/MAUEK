@@ -1,6 +1,6 @@
 ﻿namespace MAUEK_System
 {
-    partial class UserControl1
+    partial class EventList
     {
         /// <summary> 
         /// Required designer variable.
@@ -33,20 +33,20 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(193, 167);
+            this.button1.Location = new System.Drawing.Point(393, 253);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(136, 45);
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // UserControl1
+            // EventList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.button1);
-            this.Name = "UserControl1";
-            this.Size = new System.Drawing.Size(539, 490);
+            this.Name = "EventList";
+            this.Size = new System.Drawing.Size(1002, 648);
             this.ResumeLayout(false);
 
         }
