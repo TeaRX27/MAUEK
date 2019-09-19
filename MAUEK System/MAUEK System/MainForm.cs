@@ -267,6 +267,11 @@ namespace MAUEK_System
 
         }
 
+        private void HomeScreen_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void PrintTimer_Tick(object sender, EventArgs e)
         {
             if (pcollapsed)

@@ -63,9 +63,49 @@ namespace MAUEK_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Belt {
+            get {
+                object obj = ResourceManager.GetObject("Belt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bonjour {
+            get {
+                object obj = ResourceManager.GetObject("Bonjour", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Borderline {
+            get {
+                object obj = ResourceManager.GetObject("Borderline", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LogoPlaceHOlder {
             get {
                 object obj = ResourceManager.GetObject("LogoPlaceHOlder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap reeeeee {
+            get {
+                object obj = ResourceManager.GetObject("reeeeee", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

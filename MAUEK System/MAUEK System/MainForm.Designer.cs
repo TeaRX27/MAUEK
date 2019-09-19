@@ -30,14 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.NavBar = new System.Windows.Forms.Panel();
-            this.EventList = new System.Windows.Forms.Panel();
             this.ExitButton = new System.Windows.Forms.Button();
             this.PrintButton = new System.Windows.Forms.Button();
             this.EventListButton = new System.Windows.Forms.Button();
             this.EventRegButton = new System.Windows.Forms.Button();
             this.Marker = new System.Windows.Forms.Panel();
             this.HomeButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.EventList = new System.Windows.Forms.Panel();
             this.HomeScreen = new System.Windows.Forms.Panel();
             this.EventReg = new System.Windows.Forms.Panel();
             this.Print = new System.Windows.Forms.Panel();
@@ -46,10 +45,21 @@
             this.EventListTimer = new System.Windows.Forms.Timer(this.components);
             this.PrintTimer = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.eventList1 = new MAUEK_System.EventList();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.NavBar.SuspendLayout();
             this.EventList.SuspendLayout();
+            this.HomeScreen.SuspendLayout();
+            this.EventReg.SuspendLayout();
+            this.Print.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // NavBar
@@ -67,17 +77,6 @@
             this.NavBar.Name = "NavBar";
             this.NavBar.Size = new System.Drawing.Size(150, 648);
             this.NavBar.TabIndex = 0;
-            // 
-            // EventList
-            // 
-            this.EventList.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.EventList.Controls.Add(this.eventList1);
-            this.EventList.Location = new System.Drawing.Point(150, 0);
-            this.EventList.MaximumSize = new System.Drawing.Size(1002, 648);
-            this.EventList.MinimumSize = new System.Drawing.Size(0, 648);
-            this.EventList.Name = "EventList";
-            this.EventList.Size = new System.Drawing.Size(1002, 648);
-            this.EventList.TabIndex = 2;
             // 
             // ExitButton
             // 
@@ -146,28 +145,33 @@
             this.HomeButton.UseVisualStyleBackColor = true;
             this.HomeButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pictureBox1
+            // EventList
             // 
-            this.pictureBox1.Image = global::MAUEK_System.Properties.Resources.LogoPlaceHOlder;
-            this.pictureBox1.Location = new System.Drawing.Point(0, -6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 150);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.EventList.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.EventList.Controls.Add(this.pictureBox5);
+            this.EventList.Location = new System.Drawing.Point(150, 0);
+            this.EventList.MaximumSize = new System.Drawing.Size(1002, 648);
+            this.EventList.MinimumSize = new System.Drawing.Size(0, 648);
+            this.EventList.Name = "EventList";
+            this.EventList.Size = new System.Drawing.Size(1002, 648);
+            this.EventList.TabIndex = 2;
             // 
             // HomeScreen
             // 
             this.HomeScreen.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.HomeScreen.Controls.Add(this.pictureBox2);
             this.HomeScreen.Location = new System.Drawing.Point(150, 0);
             this.HomeScreen.MaximumSize = new System.Drawing.Size(1002, 648);
             this.HomeScreen.MinimumSize = new System.Drawing.Size(0, 648);
             this.HomeScreen.Name = "HomeScreen";
             this.HomeScreen.Size = new System.Drawing.Size(1002, 648);
             this.HomeScreen.TabIndex = 1;
+            this.HomeScreen.Paint += new System.Windows.Forms.PaintEventHandler(this.HomeScreen_Paint);
             // 
             // EventReg
             // 
             this.EventReg.BackColor = System.Drawing.Color.Brown;
+            this.EventReg.Controls.Add(this.pictureBox3);
             this.EventReg.Location = new System.Drawing.Point(150, 2);
             this.EventReg.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.EventReg.MaximumSize = new System.Drawing.Size(1002, 648);
@@ -179,6 +183,7 @@
             // Print
             // 
             this.Print.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Print.Controls.Add(this.pictureBox4);
             this.Print.Location = new System.Drawing.Point(150, 1);
             this.Print.MaximumSize = new System.Drawing.Size(1002, 648);
             this.Print.MinimumSize = new System.Drawing.Size(0, 648);
@@ -211,12 +216,50 @@
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // eventList1
+            // pictureBox1
             // 
-            this.eventList1.Location = new System.Drawing.Point(0, 0);
-            this.eventList1.Name = "eventList1";
-            this.eventList1.Size = new System.Drawing.Size(1002, 648);
-            this.eventList1.TabIndex = 0;
+            this.pictureBox1.Image = global::MAUEK_System.Properties.Resources.LogoPlaceHOlder;
+            this.pictureBox1.Location = new System.Drawing.Point(0, -6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::MAUEK_System.Properties.Resources.Borderline;
+            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(598, 359);
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::MAUEK_System.Properties.Resources.Belt;
+            this.pictureBox5.Location = new System.Drawing.Point(0, 2);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(428, 248);
+            this.pictureBox5.TabIndex = 0;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::MAUEK_System.Properties.Resources.Bonjour;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(502, 280);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::MAUEK_System.Properties.Resources.reeeeee;
+            this.pictureBox3.Location = new System.Drawing.Point(40, -2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(923, 661);
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
             // 
             // MainMenu
             // 
@@ -225,17 +268,24 @@
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1152, 648);
             this.Controls.Add(this.NavBar);
+            this.Controls.Add(this.EventList);
             this.Controls.Add(this.HomeScreen);
             this.Controls.Add(this.EventReg);
             this.Controls.Add(this.Print);
-            this.Controls.Add(this.EventList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainMenu";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainMenu_Load);
             this.NavBar.ResumeLayout(false);
             this.EventList.ResumeLayout(false);
+            this.HomeScreen.ResumeLayout(false);
+            this.EventReg.ResumeLayout(false);
+            this.Print.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -260,6 +310,10 @@
         private System.Windows.Forms.Timer PrintTimer;
         private System.Windows.Forms.Timer timer1;
         private EventList eventList1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }
 
